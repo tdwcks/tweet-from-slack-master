@@ -1,0 +1,42 @@
+{
+  "name": "tweet-from-slack",
+  "description": "Post tweets, replies, retweets and favorites directly from Slack",
+  "version": "1.0.0",
+  "private": true,
+  "main": "app.js",
+  "dependencies": {
+  	"express": "*",
+    "body-parser": "*",
+    "twitter": "*"
+  },
+  "env": {
+    "TWITTER_CONSUMER_KEY" : {
+      "description": "consumer key",
+      "required": true
+    },
+    "TWITTER_CONSUMER_SECRET": {
+      "description": "consumer secret",
+      "required": true
+    },
+    "TWITTER_ACCESS_TOKEN_KEY": {
+      "description": "access token",
+      "required": true
+    },
+    "TWITTER_ACCESS_TOKEN_SECRET": {
+      "description": "access token secret",
+      "required": true
+    },
+    "SLACK_TOKEN" : {
+      "description": "slack token generated from slash command",
+      "required": true
+    },
+    "ALLOWED_SLACK_USERS" : {
+      "description": "Slack usernames that allowed to tweet. Leave empty to enable all usernames. Separate multiple usernames using spaces or commas.",
+      "required": false   
+    },
+    "DISABLED_FUNCTIONS" : {
+      "description" : "Disables certain twitter functions from being used. For example, you can prevent slack users from posting new status updates, but still allow them to retweet or favorite. You can input the following: status_update, reply, retweet, favorite",
+      "required": false
+    }
+  }
+}
